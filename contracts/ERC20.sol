@@ -11,7 +11,7 @@ contract REAL is ERC20, Ownable, ERC20Permit {
         ERC20("Real", "RE")
         ERC20Permit("Real")
     {
-         _mint(msg.sender, 1_000_000 * 10 ** decimals()); // Mint initial supply to deployer
+         _mint(initialOwner, 1_000_000 * 10 ** decimals()); // Mint initial supply to deployer
         transferOwnership(initialOwner);
     }
     function mint(address to, uint256 amount) public onlyOwner {
